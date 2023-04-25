@@ -1,1 +1,24 @@
+# I created a data set that included properties that I am intersted in located in TN
+# Data set has 72 obs. of 2 variables
+# Data set includes how many acres the property has and how much it costs
+# import the data set
+library(readxl)
+DataFile <- read_excel("~/School/USF/Spring23/LIS4370/Final/DataFile.xlsx",
+                       col_types = c("numeric", "numeric"))
+View(DataFile)
 
+# I decided to create a function that would calulate the cost per acre
+# create a function to calculate cost per acre
+cost_acre <- function(Acres, Cost){
+  estimate <- Cost / Acres
+  return(estimate)
+}
+
+# perform function
+cost_acre(50.41,149900)
+> cost_acre(50.41,149900)
+[1] 2973.616
+
+cost_acre(55,330000)
+> cost_acre(55,330000)
+[1] 6000
